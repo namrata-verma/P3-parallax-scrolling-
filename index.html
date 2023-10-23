@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parallax Scrolling Website | Vanilla Javascript </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </header>
+    <section>
+        <img src="Image/stars.png" id="stars">
+        <img src="Image/moon.png" id="moon">
+        <img src="Image/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="Image/mountains_front.png" id="mountains_front">
+    </section>
+<div class="sec" id="sec">
+    <h2>Parallax Scrolling Effects</h2>
+    <p>Parallax scrolling effects are a visual technique that creates an illusion of depth and movement on a web page. This is done by moving different elements of the page at different speeds as the user scrolls. For example, the background image might move slower than the foreground text or images, creating a sense of distance.
+
+        Parallax scrolling can be used in a variety of ways to add visual interest and engagement to a website. For example, it can be used to:
+        
+        Create a sense of depth and movement in a product showcase.
+        Tell a story through a series of images or videos.
+        Highlight key features of a product or service.
+        Create a more immersive user experience.
+        Here are some examples of how parallax scrolling can be used in a descriptive and detailed way:
+        <br>
+        A website for a travel company could use parallax scrolling to create a virtual tour of a destination. The user could scroll through a series of images and videos that show the destination from different angles and perspectives. The foreground text and images could move faster than the background images, creating a sense of movement and immersion.
+        A website for a software company could use parallax scrolling to showcase the features of its new product. The user could scroll through a series of images and videos that show the product in action. The foreground text and images could move faster than the background images, highlighting the key features of the product.
+        A website for a wedding photographer could use parallax scrolling to tell the story of a wedding day. The user could scroll through a series of images and videos that show the bride and groom getting ready, the ceremony, and the reception. The foreground text and images could move faster than the background images, highlighting the key moments of the day.
+        Parallax scrolling can be a very effective way to add visual interest and engagement to a website. However, it is important to use it sparingly and carefully. Too much parallax scrolling can be overwhelming and disorienting for users.</br>
+        
+        Here are some tips for using parallax scrolling effectively:
+        
+        Use it sparingly. Don't use parallax scrolling on every page of your website. Too much parallax scrolling can be overwhelming and disorienting for users.
+        Use it to tell a story. Parallax scrolling is a great way to tell a story or showcase a product or service in a visually appealing way.
+        Use it subtly. Don't use parallax scrolling to create too much movement or animation. This can be distracting and off-putting for users.
+        Use high-quality images and videos. Parallax scrolling relies on high-quality images and videos to create a convincing illusion of depth and movement.
+</div>
+<script>
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let mountains_front = document.getElementById('mountains_front');
+    let header = document.querySelector('header');
+
+    window.addEventListener("scroll", function(){
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + 'px';
+        moon.style.top = value * 1.05 + 'px';
+        mountains_behind.style.top = value * 0.5 + 'px';
+        mountains_front.style.top = value * 0 + 'px';
+        text.style.marginRight =  value * 4 + 'px';
+        text.style.marginTop =  value * 1.5 + 'px';
+        btn.style.marginTop =  value * 1.5 + 'px';
+        header.style.top = value * 0.5 + 'px';
+
+
+
+         
+    })
+
+</script>
+</body>
+</html>
